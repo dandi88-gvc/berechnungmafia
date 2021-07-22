@@ -214,16 +214,16 @@
                 <div id="einheiten_schicken">
                   <h5>Bitte folgende Einheiten in den Raid schicken</h5>
                   <div id="einheiten_schicken_ber">
-                    ca. <span id="anzahlber" class="uk-margin-small uk-text-bold"></span> k Berserker
+                    ca. <span id="anzahlber" class="uk-margin-small uk-text-bold"></span> k T3 Berserker
                   </div>
                   <div id="einheiten_schicken_sch">
-                    ca. <span id="anzahlsch" class="uk-margin-small uk-text-bold"></span> k Schützen
+                    ca. <span id="anzahlsch" class="uk-margin-small uk-text-bold"></span> k T3 Schützen
                   </div>
                   <div id="einheiten_schicken_bik">
-                    ca. <span id="anzahlbik" class="uk-margin-small uk-text-bold"></span> k Biker
+                    ca. <span id="anzahlbik" class="uk-margin-small uk-text-bold"></span> k T3 Biker
                   </div>
                   <div id="einheiten_schicken_car">
-                    ca. <span id="anzahlcar" class="uk-margin-small uk-text-bold"></span> k Autos
+                    ca. <span id="anzahlcar" class="uk-margin-small uk-text-bold"></span> k T3 Autos
                   </div>
                 </div>
                 <div id="einheiten_lassen" class="uk-margin-top">
@@ -273,6 +273,7 @@
               $('#einheiten_lassen_bik').addClass('uk-hidden');
               $('#einheiten_lassen_car').addClass('uk-hidden');
 
+
               // Startet die Berechnung und gibt diese im Log aus
               console.log('Starte mit der Raid-Berechnung');
 
@@ -312,15 +313,17 @@
               var ver4bik = isEmpty($('#ver_t4_bik').val()) ? 0 : parseInt($('#ver_t4_bik').val());
               var summebikver= ver1bik + (ver2bik*2) + (ver3bik*3) + (ver4bik*4);
 
+              console.log(summeberang);
+
               // Abfrage ob Einheiten befüllt wurden
               if (summeberang == '' && summeschang == '' && summebikang == '' ) {
                 alert('Bitte mindestens eine gegnerische Einheit auswählen!');
               } else {
                 // Kontereinheiten berechnen
-                var konterber = summeschang - summebikang - summeberver - summeberver;
-                var kontersch = summebikang - summeberang - summeschver - summeschver;
-                var konterbik = summeberang - summeschang - summebikver - summebikver;
-                var konterfah = summeberver + summeschver + summebikver;
+                var konterber = (summeschang - summebikang - summeberver)/3;
+                var kontersch = (summebikang - summeberang - summeschver)/3;
+                var konterbik = (summeberang - summeschang - summebikver)/3;
+                var konterfah = (summeberver + summeschver + summebikver)/3;
 
                 console.log(konterber);
                 console.log(kontersch);
