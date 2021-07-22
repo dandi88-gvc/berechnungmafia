@@ -1,1 +1,379 @@
-test
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+    <meta charset="utf-8"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Raid Tool des gVC Clans</title>
+    <!-- ####################### css ######################################################### -->
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/gvc-web.css" />
+    <!-- ####################### JS ########################################################## -->
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="   crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <div class="uk-container uk-container-expand">
+        <div class="uk-margin-medium-top">
+          <h1>Raidtool des gVC Clans</h2>
+        </div>
+        <div class="uk-margin-medium-top">
+          Das ist das offizielle Raidtool des gVC Clans. Danke an <b>RM Green</b> für die Berechnungsgrundlage und <b>goldidandi88</b> für die Programmierung.
+        </div>
+        <form id="calc">
+        <div class="uk-margin-medium-top">
+          <h3>Angaben zu den feindlichen Truppen</h3>
+          <p>Bitte hier die Anzahl der verteidigenden Einheiten gemäß des Erkundungsberichtes eintragen.</p>
+          <div class="uk-grid-large uk-child-width-1-1 uk-child-width-1-3@m uk-margin-medium-top uk-grid-divider" uk-grid>
+            <div>
+              <h4>Berserker</h4>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t1_ber">T1-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t1_ber" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t2_ber">T2-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t2_ber" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t3_ber">T3-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t3_ber" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t4_ber">T4-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t4_ber" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4>Schützen</h4>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t1_sch">T1-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t1_sch" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t2_sch">T2-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t2_sch" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t3_sch">T3-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t3_sch" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t4_sch">T4-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t4_sch" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4>Biker</h4>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t1_bik">T1-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t1_bik" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t2_bik">T2-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t2_bik" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t3_bik">T3-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t3_bik" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="t4_bik">T4-Einheiten</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="t4_bik" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="uk-margin-medium-top">
+          <h3>Angaben zu den feindlichen Verteidigungsanlagen</h3>
+          <p>Bitte hier die Anzahl der Verteidigungsanlagen gemäß des Erkundungsberichtes eintragen.</p>
+          <div class="uk-grid-large uk-child-width-1-1 uk-child-width-1-3@m uk-margin-medium-top uk-grid-divider" uk-grid>
+            <div>
+              <h4>Verteidigungsanlage gegen Berserker</h4>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t1_ber">T1-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t1_ber" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t2_ber">T2-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t2_ber" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t3_ber">T3-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t3_ber" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t4_ber">T4-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t4_ber" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4>Verteidigungsanlage gegen Schützen</h4>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t1_sch">T1-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t1_sch" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t2_sch">T2-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t2_sch" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t3_sch">T3-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t3_sch" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t4_sch">T4-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t4_sch" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4>Verteidigungsanlage gegen Biker</h4>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t1_bik">T1-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t1_bik" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t2_bik">T2-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t2_bik" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t3_bik">T3-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t3_bik" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+              <div class="uk-margin">
+                <label class="uk-form-label" for="ver_t4_bik">T4-Verteidigungsanlage</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" id="ver_t4_bik" type="number" placeholder="" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </form>
+        <div class="uk-margin-large-top">
+          <button id="berechnen" class="uk-button uk-button-secondary uk-button-large">Raid berechnen</button>
+          <button class="uk-button uk-button-default uk-margin-small-right" type="button" uk-toggle="target: #modal-example">Open</button>
+        </div>
+        <footer class="uk-margin-large-top uk-padding-large uk-padding-remove-horizontal">
+          <span class="uk-text-small uk-text-meta">
+            Copyright 2021 gVC Clan - goldidandi88
+          </span>
+        </footer>
+        <!-- This is the modal -->
+        <div id="modal-example" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <h2 class="uk-modal-title">Empfohlene Kontereinheiten</h2>
+                <p>
+                  Zum Kontern des von dir eingetragenen Gegners bitte folgende Einheiten in den Raid schicken und deine Helden dazu anpassen.
+                </p>
+                <div id="einheiten_schicken">
+                  <h5>Bitte folgende Einheiten in den Raid schicken</h5>
+                  <div id="einheiten_schicken_ber">
+                    ca. <span id="anzahlber" class="uk-margin-small uk-text-bold"></span> Berserker
+                  </div>
+                  <div id="einheiten_schicken_sch">
+                    ca. <span id="anzahlsch" class="uk-margin-small uk-text-bold"></span> Schützen
+                  </div>
+                  <div id="einheiten_schicken_bik">
+                    ca. <span id="anzahlbik" class="uk-margin-small uk-text-bold"></span> Biker
+                  </div>
+                  <div id="einheiten_schicken_car">
+                    ca. <span id="anzahlcar" class="uk-margin-small uk-text-bold"></span> Autos
+                  </div>
+                </div>
+                <div id="einheiten_lassen" class="uk-margin-top">
+                  <h5 class="uk-margin-remove-bottom">Bitte folgende Einheiten <b class=" uk-text-danger">nicht</b> in den Raid schicken</h5>
+                  <p class="uk-margin-remove-top uk-text-small uk-text-meta">Hier ist mit massiven Verlusten zu rechnen!</p>
+                  <div id="einheiten_lassen_ber" class="uk-text-danger">
+                    Berserker
+                  </div>
+                  <div id="einheiten_lassen_sch" class="uk-text-danger">
+                    Schützen
+                  </div>
+                  <div id="einheiten_lassen_bik" class="uk-text-danger">
+                    Biker
+                  </div>
+                  <div id="einheiten_lassen_car" class="uk-text-danger">
+                    Autos
+                  </div>
+                </div>
+                <p class="uk-text-right uk-margin-large-top">
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+                    <button id="neuberechnen" class="uk-button uk-button-secondary uk-modal-close" type="button">Neue Berechung</button>
+                </p>
+            </div>
+        </div>
+        <script type="text/javascript">
+          jQuery(document).ready(function($) {
+
+            function isEmpty(value) {
+              return typeof value == 'string' && !value.trim() || typeof value == 'undefined' || value === null;
+            }
+
+            $('#neuberechnen').click(function() {
+              $('#calc')[0].reset();
+            });
+
+
+            $('#berechnen').click(function() {
+              // Alle Felder auf hidden
+              $('#einheiten_schicken').addClass('uk-hidden');
+              $('#einheiten_schicken_ber').addClass('uk-hidden');
+              $('#einheiten_schicken_sch').addClass('uk-hidden');
+              $('#einheiten_schicken_bik').addClass('uk-hidden');
+              $('#einheiten_schicken_car').addClass('uk-hidden');
+              $('#einheiten_lassen').addClass('uk-hidden');
+              $('#einheiten_lassen_ber').addClass('uk-hidden');
+              $('#einheiten_lassen_sch').addClass('uk-hidden');
+              $('#einheiten_lassen_bik').addClass('uk-hidden');
+              $('#einheiten_lassen_car').addClass('uk-hidden');
+
+              // Startet die Berechnung und gibt diese im Log aus
+              console.log('Starte mit der Raid-Berechnung');
+
+              // Umwandeln der Eingabe aus den Berserker Feldern
+              var t1ber = isEmpty($('#t1_ber').val()) ? 0 : parseInt($('#t1_ber').val());
+              var t2ber = isEmpty($('#t2_ber').val()) ? 0 : parseInt($('#t2_ber').val());
+              var t3ber = isEmpty($('#t3_ber').val()) ? 0 : parseInt($('#t3_ber').val());
+              var t4ber = isEmpty($('#t4_ber').val()) ? 0 : parseInt($('#t4_ber').val());
+              var summeberang= t1ber + (t2ber*2) + (t3ber*3) + (t4ber*4);
+              var ver1ber = isEmpty($('#ver_t1_ber').val()) ? 0 : parseInt($('#ver_t1_ber').val());
+              var ver2ber = isEmpty($('#ver_t2_ber').val()) ? 0 : parseInt($('#ver_t2_ber').val());
+              var ver3ber = isEmpty($('#ver_t3_ber').val()) ? 0 : parseInt($('#ver_t3_ber').val());
+              var ver4ber = isEmpty($('#ver_t4_ber').val()) ? 0 : parseInt($('#ver_t4_ber').val());
+              var summeberver= ver1ber + (ver2ber*2) + (ver3ber*3) + (ver4ber*4);
+
+              // Umwandeln der Eingabe aus den Schützen Feldern
+              var t1sch = isEmpty($('#t1_sch').val()) ? 0 : parseInt($('#t1_sch').val());
+              var t2sch = isEmpty($('#t2_sch').val()) ? 0 : parseInt($('#t2_sch').val());
+              var t3sch = isEmpty($('#t3_sch').val()) ? 0 : parseInt($('#t3_sch').val());
+              var t4sch = isEmpty($('#t4_sch').val()) ? 0 : parseInt($('#t4_sch').val());
+              var summeschang= t1sch + (t2sch*2) + (t3sch*3) + (t4sch*4);
+              var ver1sch = isEmpty($('#ver_t1_sch').val()) ? 0 : parseInt($('#ver_t1_sch').val());
+              var ver2sch = isEmpty($('#ver_t2_sch').val()) ? 0 : parseInt($('#ver_t2_sch').val());
+              var ver3sch = isEmpty($('#ver_t3_sch').val()) ? 0 : parseInt($('#ver_t3_sch').val());
+              var ver4sch = isEmpty($('#ver_t4_sch').val()) ? 0 : parseInt($('#ver_t4_sch').val());
+              var summeschver= ver1sch + (ver2sch*2) + (ver3sch*3) + (ver4sch*4);
+
+              // Umwandeln der Eingabe aus den Biker Feldern
+              var t1bik = isEmpty($('#t1_bik').val()) ? 0 : parseInt($('#t1_bik').val());
+              var t2bik = isEmpty($('#t2_bik').val()) ? 0 : parseInt($('#t2_bik').val());
+              var t3bik = isEmpty($('#t3_bik').val()) ? 0 : parseInt($('#t3_bik').val());
+              var t4bik = isEmpty($('#t4_bik').val()) ? 0 : parseInt($('#t4_bik').val());
+              var summebikang= t1bik + (t2bik*2) + (t3bik*3) + (t4bik*4);
+              var ver1bik = isEmpty($('#ver_t1_bik').val()) ? 0 : parseInt($('#ver_t1_bik').val());
+              var ver2bik = isEmpty($('#ver_t2_bik').val()) ? 0 : parseInt($('#ver_t2_bik').val());
+              var ver3bik = isEmpty($('#ver_t3_bik').val()) ? 0 : parseInt($('#ver_t3_bik').val());
+              var ver4bik = isEmpty($('#ver_t4_bik').val()) ? 0 : parseInt($('#ver_t4_bik').val());
+              var summebikver= ver1bik + (ver2bik*2) + (ver3bik*3) + (ver4bik*4);
+
+              // Abfrage ob Einheiten befüllt wurden
+              if (summeberang == '' && summeschang == '' && summebikang == '' ) {
+                alert('Bitte mindestens eine gegnerische Einheit auswählen!');
+              } else {
+                // Kontereinheiten berechnen
+                var konterber = summeschang - summebikang - summeberver - summeberver;
+                var kontersch = summebikang - summeberang - summeschver - summeschver;
+                var konterbik = summeberang - summeschang - summebikver - summebikver;
+                var konterfah = summeberver + summeschver + summebikver;
+
+                console.log(konterber);
+                console.log(kontersch);
+                console.log(konterbik);
+                console.log(konterfah);
+
+                if ( konterber > 0 ) {
+                  $('#einheiten_schicken').removeClass('uk-hidden');
+                  $('#einheiten_schicken_ber').removeClass('uk-hidden');
+                  $('#anzahlber').html(konterber);
+                }
+                if ( kontersch > 0 ) {
+                  $('#einheiten_schicken').removeClass('uk-hidden');
+                  $('#einheiten_schicken_sch').removeClass('uk-hidden');
+                  $('#anzahlsch').html(kontersch);
+                }
+                if ( konterbik > 0 ) {
+                  $('#einheiten_schicken').removeClass('uk-hidden');
+                  $('#einheiten_schicken_bik').removeClass('uk-hidden');
+                  $('#anzahlbik').html(konterbik);
+                }
+                if ( konterfah > 0 ) {
+                  $('#einheiten_schicken').removeClass('uk-hidden');
+                  $('#einheiten_schicken_car').removeClass('uk-hidden');
+                  $('#anzahlcar').html(konterfah);
+                }
+
+                if ( konterber < 0 ) {
+                  $('#einheiten_lassen').removeClass('uk-hidden');
+                  $('#einheiten_lassen_ber').removeClass('uk-hidden');
+                }
+                if ( kontersch < 0 ) {
+                  $('#einheiten_lassen').removeClass('uk-hidden');
+                  $('#einheiten_lassen_sch').removeClass('uk-hidden');
+                }
+                if ( konterbik < 0 ) {
+                  $('#einheiten_lassen').removeClass('uk-hidden');
+                  $('#einheiten_lassen_bik').removeClass('uk-hidden');
+                }
+                if ( konterfah < 0 ) {
+                  $('#einheiten_lassen').removeClass('uk-hidden');
+                  $('#einheiten_lassen_car').removeClass('uk-hidden');
+                }
+
+                UIkit.modal('#modal-example').show();
+
+              }
+
+            });
+
+          });
+        </script>
+      </div>
+    </body>
+</html>

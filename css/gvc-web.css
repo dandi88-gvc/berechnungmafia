@@ -1,0 +1,11 @@
+/* Fonts */
+@import 'gvc-fonts.css';
+/* HTML */
+html
+{
+  font-family: 'Open Sans', Verdana, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #1d1d1b;
+  background: #f8f8f8;
+}
