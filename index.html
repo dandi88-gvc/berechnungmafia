@@ -320,10 +320,10 @@
                 alert('Bitte mindestens eine gegnerische Einheit auswählen!');
               } else {
                 // Kontereinheiten berechnen
-                var konterber = (summeschang - summebikang - summeberver)/3;
-                var kontersch = (summebikang - summeberang - summeschver)/3;
-                var konterbik = (summeberang - summeschang - summebikver)/3;
-                var konterfah = (summeberver + summeschver + summebikver)/3;
+                var konterber = Math.round((summeschang - summebikang - summeberver)/3);
+                var kontersch = Math.round((summebikang - summeberang - summeschver)/3);
+                var konterbik = Math.round((summeberang - summeschang - summebikver)/3);
+                var konterfah = Math.round((summeberver + summeschver + summebikver)/3);
 
                 console.log(konterber);
                 console.log(kontersch);
@@ -333,22 +333,22 @@
                 if ( konterber > 0 ) {
                   $('#einheiten_schicken').removeClass('uk-hidden');
                   $('#einheiten_schicken_ber').removeClass('uk-hidden');
-                  $('#anzahlber').html(konterber);
+                  $('#anzahlber').html(konterber+1);
                 }
                 if ( kontersch > 0 ) {
                   $('#einheiten_schicken').removeClass('uk-hidden');
                   $('#einheiten_schicken_sch').removeClass('uk-hidden');
-                  $('#anzahlsch').html(kontersch);
+                  $('#anzahlsch').html(kontersch+1);
                 }
                 if ( konterbik > 0 ) {
                   $('#einheiten_schicken').removeClass('uk-hidden');
                   $('#einheiten_schicken_bik').removeClass('uk-hidden');
-                  $('#anzahlbik').html(konterbik);
+                  $('#anzahlbik').html(konterbik+1);
                 }
                 if ( konterfah > 0 ) {
                   $('#einheiten_schicken').removeClass('uk-hidden');
                   $('#einheiten_schicken_car').removeClass('uk-hidden');
-                  $('#anzahlcar').html(konterfah);
+                  $('#anzahlcar').html(konterfah+1);
                 }
 
                 if ( konterber < 0 ) {
